@@ -16,7 +16,8 @@ import {
 const items = [
   { title: "Binary Cursor", url: "/dashboard/BinaryCursor" },
   { title: "Canvas Cursor", url: "/dashboard/CanvasCursor" },
-  { title: "Neon Pulse Cursor", url: "/neon" },
+  { title: "Aim Cursor", url: "/dashboard/AimCursor" },
+  { title: "Neon Pulse Cursor", url: "/dashboard/NeonPulseCursor" },
   { title: "Particle Cursor", url: "/particle" },
   { title: "Comet Cursor", url: "/comet" },
   { title: "Magnetic Cursor", url: "/magnetic" },
@@ -27,37 +28,39 @@ export function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar variant="sidebar" className="absolute top-13">
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Cursor Animations</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => {
-                const isActive = pathname === item.url;
+    // <div className="sticky top-[3.25rem] z-10 h-[calc(100vh-3.25rem)]">
+      <Sidebar variant="sidebar" className="h-full top-14 ">
+        <SidebarContent className="bg-[#171717]">
+          <SidebarGroup>
+            <SidebarGroupLabel>Cursor Animations</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {items.map((item) => {
+                  const isActive = pathname === item.url;
 
-                return (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <Link
-                        href={item.url}
-                        className={`flex items-center gap-2 px-2 py-1 rounded-md transition-all
-                          ${
-                            isActive
-                              ? "border-l-4 border-white text-white bg-transparent"
-                              : "hover:border-l-4 hover:border-white hover:text-white"
-                          }`}
-                      >
-                        <span>{item.title}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
+                  return (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton asChild>
+                        <Link
+                          href={item.url}
+                          className={`flex items-center gap-2 px-2 py-1 rounded-md transition-all duration-200
+                            ${
+                              isActive
+                                ? "border-l-4 border-purple-800 text-purple-400 bg-[#171717] backdrop-blur-sm"
+                                : "hover:border-l-4 hover:border-white hover:bg-white/20 hover:backdrop-blur-xl hover:text-white"
+                            }`}
+                        >
+                          <span>{item.title}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+    // </div>
   );
 }

@@ -1,17 +1,29 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/ui/app-sidebar";
 import Navbar from "../containers/Navbar";
+import Header from "../containers/Header";
+import Footer from "../containers/Footer";
 
 export default function Layout({ children }) {
+
   return (
-    <div>
+    <div >
       <Navbar />
+
       <SidebarProvider>
         <AppSidebar />
-        <main>
-          <SidebarTrigger />
-          {children}
-        </main>
+        <SidebarInset className="overflow-hidden">
+          <Header />
+          <main className="flex-1 overflow-hidden transition-all duration-200 ease-in-out">
+            {children}
+          </main>
+      <Footer />
+           
+        </SidebarInset>
       </SidebarProvider>
     </div>
   );

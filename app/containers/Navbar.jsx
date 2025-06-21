@@ -15,6 +15,7 @@ import {
 import { Command } from "cmdk";
 import Image from "next/image";
 import { ModeToggle } from "@/components/ui/ModeToggle";
+import Link from "next/link";
 export default function Navbar() {
   // const [darkMode, setDarkMode] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -80,16 +81,18 @@ export default function Navbar() {
       <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/60 dark:bg-gray-900/20 shadow-md border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
           {/* Left logo */}
+
           <div className="flex items-center gap-2">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={50}
-              height={50}
-              className="hover:rotate-12 transition-transform duration-300 ease-in-out rounded-full"
-             
-            />
-            <span className="font-bold text-lg">Cursory</span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={50}
+                height={50}
+                className="hover:rotate-12 transition-transform duration-300 ease-in-out rounded-full"
+              />
+              <span className="font-bold text-lg">React Cursor</span>
+            </Link>
           </div>
 
           {/* Right controls */}
@@ -97,12 +100,12 @@ export default function Navbar() {
             {/* Search button with shortcut hint */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 rounded-md px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              className="flex items-center gap-2 rounded-md px-3 py-1 text-sm bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/20 text-gray-800 dark:text-gray-100 hover:bg-white/30 dark:hover:bg-white/20 transition duration-200"
               title="Open search (Ctrl + K)"
             >
               <Search className="w-5 h-5" />
               <span>Search</span>
-              <kbd className="ml-2 rounded border border-gray-300 bg-white px-1.5 py-0.5 text-xs font-sans text-gray-600 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
+              <kbd className="ml-2 rounded border border-gray-300 bg-white px-1.5 py-0.5 text-xs font-sans text-gray-600 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300">
                 Ctrl + K
               </kbd>
             </button>

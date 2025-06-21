@@ -3,7 +3,16 @@
 
 import CodeSnippetViewer from "@/components/ui/code-snippet-viewer";
 import CanvasCursorComponent from "./component";
-
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { MousePointer2 } from "lucide-react";
 export default function CodeExamples() {
   const canvasCode = `import React from 'react';
 import useCanvasCursor from '@/hooks/useCanvasCursor';
@@ -196,31 +205,220 @@ const useCanvasCursor = () => {
 
 export default useCanvasCursor;
 `;
-
+const canvasUsageCode = ` "use client";
+import React from 'react';
+import CanvasCursorComponent from './CanvasCursorComponent';
+const App = () => {
   return (
-    <main className="max-w-4xl mx-auto p-6 space-y-16">
-      <section>
-        <CanvasCursorComponent />
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          Canvas Cursor Component
-        </h2>
-        <CodeSnippetViewer
-          code={canvasCode}
-          title="CanvasCursorComponent.jsx"
-          maxLines={25}
-        />
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          Canvas Cursor Hook
-        </h2>
-        <CodeSnippetViewer
-          code={canvasHook}
-          title="useCanvasCursor.js"
-          maxLines={25}
-        />
-      </section>
-    </main>
+    <div>
+      <CanvasCursorComponent />
+      {/* Your app content goes here */}
+      <h1 className="text-center text-2xl mt-10">Welcome to My App</h1>
+    </div>
   );
-}
+};
+`
+  return (
+      <div className="min-h-screen w-full flex items-center justify-center mx-auto  dark:bg-[#171717] p-4">
+        {/* Live Demo */}
+        <CanvasCursorComponent color="#AD46FF" />
+  
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <MousePointer2 className="w-12 h-12 text-purple-500" />
+              <h1 className="text-3xl md:text-5xl font-bold text-purple-500 ">
+                Canvas Cursor Effect
+              </h1>
+              <Badge variant="secondary" className="text-sm">
+                Interactive
+              </Badge>
+            </div>
+            <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
+              Move your mouse around to see the Canvas cursor effect in action!
+            </p>
+          </div>
+  
+          <Tabs defaultValue="demo" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 mb-8">
+              <TabsTrigger value="demo">Live Demo</TabsTrigger>
+              <TabsTrigger value="component">Component</TabsTrigger>
+              <TabsTrigger value="usage">usage</TabsTrigger>
+              {/* <TabsTrigger value="props">Props</TabsTrigger> */}
+            </TabsList>
+  
+            <TabsContent value="demo" className="space-y-6">
+              <Card className="bg-white/50 dark:bg-[#171717]/50 backdrop-blur-sm border-2">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl">Interactive Demo</CardTitle>
+                  <CardDescription className="text-lg">
+                    Move your cursor around this area to see the Canvas effect
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="min-h-[400px]  rounded-xl border-2 border-dashed border-purple-300/50 flex items-center justify-center relative overflow-hidden">
+                    <div className="text-center space-y-6 z-10">
+                      <div className="text-8xl">🖱️</div>
+                      <div className="space-y-2">
+                        <p className="text-2xl font-bold text-white">
+                          Move your mouse here!
+                        </p>
+                        <p className="text-violet-300 text-lg">
+                          Canvas will follow your cursor
+                        </p>
+                      </div>
+                    </div>
+                    {/* Decorative grid */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+  
+            <TabsContent value="component" className="space-y-6">
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between">
+                  <div>
+                    <CardTitle className="text-xl">useCanvasCursor</CardTitle>
+                    <CardDescription>
+                      Complete component implementation
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CodeSnippetViewer
+                    code={canvasHook}
+                    title="useCanvasCursor.jsx"
+                    language="javascript"
+                    maxLines={25}
+                  />
+                </CardContent>
+              </Card>
+            </TabsContent>
+  
+            <TabsContent value="usage" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Usage</CardTitle>
+                  <CardDescription>
+                    Install the required dependencies
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <CodeSnippetViewer
+                    code={canvasCode}
+                    title="Usage in your app"
+                    language="bash"
+                    maxLines={5}
+                  />
+                </CardContent>
+              </Card>
+  
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between">
+                  <div>
+                    <CardTitle>Basic Usage</CardTitle>
+                    <CardDescription>
+                      How to implement the Canvas cursor in your app
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CodeSnippetViewer
+                    code={canvasUsageCode}
+                    title="App.jsx"
+                    language="javascript"
+                    maxLines={15}
+                  />
+                </CardContent>
+              </Card>
+            </TabsContent>
+  
+            {/* <TabsContent value="props" className=" space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Component Props</CardTitle>
+                  <CardDescription>
+                    Customize the binary cursor effect with these props
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <CodeSnippetViewer
+                    code={propsCode}
+                    title="Props variables"
+                    language="typescript"
+                    maxLines={10}
+                  />
+  
+                  <div className="mt-6 space-y-4">
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="border rounded-xl p-4 bg-[#171717] backdrop-blur-sm border-purple-400 shadow-md">
+                        <h4 className="font-semibold mb-2 text-purple-400">
+                          color
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          The color of the binary particles. Accepts any valid CSS
+                          color value.
+                        </p>
+                      </div>
+  
+                      <div className="border rounded-xl p-4 bg-[#171717] backdrop-blur-sm border-purple-400 shadow-md">
+                        <h4 className="font-semibold mb-2 text-purple-400">
+                          size
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          Font size of the binary characters in pixels.
+                        </p>
+                      </div>
+                      <div className="border rounded-xl p-4 bg-[#171717] backdrop-blur-sm border-purple-400 shadow-md">
+                        <h4 className="font-semibold mb-2 text-purple-400">
+                          count
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          Number of particles generated per emission.
+                        </p>
+                      </div>
+                      <div className="border rounded-xl p-4 bg-[#171717] backdrop-blur-sm border-purple-400 shadow-md">
+                        <h4 className="font-semibold mb-2 text-purple-400">
+                          spread
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          How far particles spread from the cursor position.
+                        </p>
+                      </div>
+                      <div className="border rounded-xl p-4 bg-[#171717] backdrop-blur-sm border-purple-400 shadow-md">
+                        <h4 className="font-semibold mb-2 text-purple-400">
+                          duration
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          How long particles remain visible in milliseconds.
+                        </p>
+                      </div>
+                      <div className="border rounded-xl p-4 bg-[#171717] backdrop-blur-sm border-purple-400 shadow-md">
+                        <h4 className="font-semibold mb-2 text-purple-400">
+                          frequency
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          Time between particle emissions in milliseconds.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="border rounded-xl p-4 bg-[#171717] backdrop-blur-sm border-purple-400 shadow-md">
+                      <h4 className="font-semibold mb-2 text-purple-400">
+                        movementThreshold
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Minimum cursor movement distance to trigger particle
+                        emission.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent> */}
+          </Tabs>
+        </div>
+      </div>
+    );
+  }
+  

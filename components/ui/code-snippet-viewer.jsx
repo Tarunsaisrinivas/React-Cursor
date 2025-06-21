@@ -26,10 +26,10 @@ export default function CodeSnippetViewer({
   };
 
   return (
-    <div className="relative bg-gray-900 rounded-lg border border-gray-800 overflow-hidden shadow-2xl">
+    <div className="relative bg-[#0d1117] rounded-lg border border-white/30 overflow-hidden shadow-2xl">
       {/* Header */}
       {title && (
-        <div className="px-4 py-2 bg-gray-800 border-b border-gray-700">
+        <div className="px-4 py-2 bg-[#0d1117] border-b border-gray-700">
           <span className="text-gray-300 text-sm font-medium">{title}</span>
         </div>
       )}
@@ -53,7 +53,7 @@ export default function CodeSnippetViewer({
       <div className="relative">
         <div className="flex">
           {/* Line Numbers */}
-          <div className="flex-shrink-0 px-4 py-4 bg-gray-800/50 border-r border-gray-700 select-none text-right">
+          <div className="flex-shrink-0 px-4 py-4 bg-[#0d1117] border-r border-gray-700 select-none text-right">
             {displayLines.map((_, index) => (
               <div
                 key={index}

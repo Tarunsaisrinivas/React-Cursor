@@ -79,7 +79,8 @@
 }
 
 .dark {
-  --background:#101828  ;
+  /* --background:#101828  ; */
+  --background:#000000  ;
   /* --background:#2D294C  ; */
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -116,8 +117,18 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+   
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes waveMove {
+  from { transform: translateX(-20px); }
+  to { transform: translateX(0); }
 }

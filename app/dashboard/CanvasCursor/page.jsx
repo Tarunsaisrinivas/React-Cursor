@@ -1,4 +1,3 @@
-// components/CodeExamples.jsx
 "use client";
 
 import CodeSnippetViewer from "@/components/ui/code-snippet-viewer";
@@ -13,7 +12,9 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MousePointer2 } from "lucide-react";
+
 export default function CodeExamples() {
+    
   const canvasCode = `import React from 'react';
 import useCanvasCursor from '@/hooks/useCanvasCursor';
 

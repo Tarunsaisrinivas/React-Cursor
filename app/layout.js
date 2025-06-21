@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { icons } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cursory",
+  title: "React Cursor",
   description:
     "A collection of modern cursor components with smooth animations—easy to plug, fun to play.",
+    icons:{
+    icon: "/favicon.ico",
+    
+    }
 };
 
 export default function RootLayout({ children }) {

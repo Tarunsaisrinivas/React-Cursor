@@ -155,7 +155,7 @@ export default function LandingPage() {
                         </div>
                         <div className="mt-2">
                           <span className="text-blue-400">
-                            {"<CanvasCursor"}
+                            {"<BinaryCursor"}
                           </span>
                         </div>
                         <div className="ml-4">
@@ -182,6 +182,16 @@ export default function LandingPage() {
                           <span className="text-yellow-400">duration</span>
                           <span className="text-white">=</span>
                           <span className="text-green-400">{"{2000}"}</span>
+                        </div>
+                        <div className="ml-4">
+                          <span className="text-yellow-400">frequency</span>
+                          <span className="text-white">=</span>
+                          <span className="text-green-400">{"{40}"}</span>
+                        </div>
+                        <div className="ml-4">
+                          <span className="text-yellow-400">movementThreshold</span>
+                          <span className="text-white">=</span>
+                          <span className="text-green-400">{"{10}"}</span>
                         </div>
                         <div>
                           <span className="text-blue-400">{"/>"}</span>

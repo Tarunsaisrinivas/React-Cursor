@@ -343,14 +343,17 @@ export default function App() {
 
 
 const propsCode = `
-color="rgba(0, 255, 255, 0.8)"
-  size={18}
-  count={4}
-  spread={2.5}
-  duration={2000}
-  frequency={40}
-  movementThreshold={10}
-}`;
+| Prop              | Type   | Default   |                           
+|-------------------| ------ | --------- | 
+| color             | string | "#12E193" | 
+| size              | number | 13        |
+| count             | number | 2         |          
+| spread            | number | 2         | 
+| duration          | number | 1100      | 
+| frequency         | number | 80        | 
+| movementThreshold | number | 5         |    
+`;
+
 
 export default function Component() {
   return (

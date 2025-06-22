@@ -301,9 +301,9 @@ const App = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Usage</CardTitle>
-                  <CardDescription>
+                  {/* <CardDescription>
                     Install the required dependencies
-                  </CardDescription>
+                  </CardDescription> */}
                 </CardHeader>
                 <CardContent>
                   <CodeSnippetViewer

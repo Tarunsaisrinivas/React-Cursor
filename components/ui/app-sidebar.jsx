@@ -14,14 +14,15 @@ import {
 } from "@/components/ui/sidebar";
 
 const items = [
-  { title: "Binary Cursor", url: "/dashboard/BinaryCursor" },
-  { title: "Canvas Cursor", url: "/dashboard/CanvasCursor" },
-  { title: "Aim Cursor", url: "/dashboard/AimCursor" },
-  { title: "Neon Pulse Cursor", url: "/dashboard/NeonPulseCursor" },
-  { title: "Particle Cursor", url: "/particle" },
-  { title: "Comet Cursor", url: "/comet" },
-  { title: "Magnetic Cursor", url: "/magnetic" },
-  { title: "Bubble Cursor", url: "/bubble" },
+    { title: "Binary Cursor", url: "/dashboard/BinaryCursor" },
+    { title: "Canvas Cursor", url: "/dashboard/CanvasCursor" },
+    { title: "Aim Cursor", url: "/dashboard/AimCursor" },
+    { title: "Neon Pulse Cursor", url: "/dashboard/NeonPulseCursor" },
+    { title: "Lens Magnifier Cursor", url: "/dashboard/LensMagnifier" },
+    //   { title: "Particle Cursor", url: "/particle" },
+    //   { title: "Comet Cursor", url: "/comet" },
+    //   { title: "Magnetic Cursor", url: "/magnetic" },
+    //   { title: "Bubble Cursor", url: "/bubble" },
 ];
 
 export function AppSidebar() {
@@ -32,7 +33,7 @@ export function AppSidebar() {
       <Sidebar variant="sidebar" className="h-full top-14 ">
         <SidebarContent className="bg-[#171717]">
           <SidebarGroup>
-            <SidebarGroupLabel>Cursor Animations</SidebarGroupLabel>
+            <SidebarGroupLabel className="text-lg text-purple-400">Cursor Animations</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {items.map((item) => {
@@ -50,7 +51,7 @@ export function AppSidebar() {
                                 : "hover:border-l-4 hover:border-white hover:bg-white/20 hover:backdrop-blur-xl hover:text-white"
                             }`}
                         >
-                          <span>{item.title}</span>
+                          <span >{item.title}</span>
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>

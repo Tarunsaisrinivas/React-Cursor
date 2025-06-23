@@ -66,7 +66,10 @@ export default function Navbar() {
         // Navigate to docs
         break;
       case "github":
-        window.open("https://github.com/your-repo", "_blank");
+        window.open(
+            "https://github.com/Tarunsaisrinivas/React-Cursor",
+            "_blank"
+        );
         break;
       // case "toggle-theme":
       //   setDarkMode((d) => !d);

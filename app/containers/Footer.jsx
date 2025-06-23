@@ -42,7 +42,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
           Built with 💜 by{" "}
           <Link
-            href="https://github.com/tarunsaisrinivas"
+            href="https://tarunsaisrinivas.site"
             target="_blank"
             rel="noopener noreferrer"
             className="text-purple-500"

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import NeonPulseCursor from "./component";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -9,10 +10,18 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MousePointer2 } from "lucide-react";
+import { Bug, MousePointer2, Star } from "lucide-react";
 import CodeSnippetViewer from "@/components/ui/code-snippet-viewer";
-
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import { Heart } from "lucide-react";
 const page = () => {
+    const [selectedTab, setSelectedTab] = useState("demo");
+    const pathname = usePathname();
+    const encodedPath = encodeURIComponent(`[${pathname}]`);
+    const issueUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?q=label%3A%22Bug%20%F0%9F%90%9B%22&title=[Bug 🪲]${encodedPath}: `;
+    const featureUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?q=label%3A%22Feature%20%F0%9F%92%A1%22&title=[Feature 💡]${encodedPath}: `;
+
     const NeonPulseCode = `"use client";
     
     import { useRef, useEffect, useState } from "react";
@@ -120,28 +129,48 @@ const page = () => {
     blur	  |  number	 |  20	
     `;
     return (
-        <div className="min-h-screen w-full flex items-center justify-center mx-auto  dark:bg-[#171717] p-4">
-            {/* Live Demo */}
-            <NeonPulseCursor />
+        <div className="w-full flex flex-col items-center justify-center dark:bg-[#171717] p-4">
+        <NeonPulseCursor />
 
-            <div className="w-full max-w-7xl mx-auto">
-                <div className="text-center mb-12">
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <MousePointer2 className="w-12 h-12 text-purple-500" />
-                        <h1 className="text-3xl md:text-5xl font-bold text-purple-500 ">
-                            Neon Pulse Effect
-                        </h1>
-                        <Badge variant="secondary" className="text-sm">
-                            Interactive
-                        </Badge>
-                    </div>
-                    <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
-                        Move your mouse around to see the Neon Pulse effect
-                        in action!
-                    </p>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12 gap-6 w-full">
+            <div className="text-center lg:text-left space-y-4">
+                <div className="flex items-center justify-center lg:justify-start gap-3">
+                    <MousePointer2 className="w-10 h-10 text-purple-500" />
+                    <h1 className="text-3xl md:text-5xl font-bold text-purple-500">
+                        Neon Pulse Effect
+                    </h1>
+                    <Badge variant="secondary" className="text-sm">
+                        Interactive
+                    </Badge>
                 </div>
-
-                <Tabs defaultValue="demo" className="w-full">
+                <p className="text-muted-foreground text-xl max-w-2xl mx-auto lg:mx-0">
+                    Move your mouse around to see the Neon Pulse effect in action!
+                </p>
+            </div>
+            <div className="flex flex-col items-center lg:items-end gap-4">
+                <Button
+                    variant="outline"
+                    className={`backdrop-blur-md border ${
+                        selectedTab === "contribute"
+                            ? "border-purple-400 text-purple-400"
+                            : "border-purple-400/40 text-purple-300"
+                    } hover:bg-purple-500 hover:text-purple-100 shadow-lg flex items-center gap-2`}
+                    onClick={() => setSelectedTab("contribute")}
+                >
+                    <Heart
+                        className={`w-4 h-4 ${
+                            selectedTab === "contribute" ? "fill-purple-400" : ""
+                        }`}
+                    />
+                    Contribute
+                </Button>
+            </div>
+        </div>
+                <Tabs
+                    value={selectedTab}
+                    onValueChange={setSelectedTab}
+                    className="w-full"
+                >
                     <TabsList className="grid w-full grid-cols-4 mb-8">
                         <TabsTrigger value="demo">Live Demo</TabsTrigger>
                         <TabsTrigger value="component">Component</TabsTrigger>
@@ -169,7 +198,8 @@ const page = () => {
                                                 Move your mouse here!
                                             </p>
                                             <p className="text-violet-300 text-lg">
-                                                Neon Pulse will follow your cursor
+                                                Neon Pulse will follow your
+                                                cursor
                                             </p>
                                         </div>
                                     </div>
@@ -226,8 +256,8 @@ const page = () => {
                                 <div>
                                     <CardTitle>Basic Usage</CardTitle>
                                     <CardDescription>
-                                        How to implement the Neon Pulse in
-                                        your app
+                                        How to implement the Neon Pulse in your
+                                        app
                                     </CardDescription>
                                 </div>
                             </CardHeader>
@@ -308,9 +338,51 @@ const page = () => {
                             </CardContent>
                         </Card>
                     </TabsContent>
+
+                    <TabsContent value="contribute">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle className="text-center">
+                                    Help improve this component!
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a
+                                    href={issueUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Button
+                                        variant="outline"
+                                        className="flex items-center gap-2"
+                                    >
+                                        <Bug className="w-4 h-4" />
+                                        Report an Issue
+                                    </Button>
+                                </a>
+                                <span className="text-muted-foreground text-sm md:flex m:items-center items-center text-center">
+                                    or
+                                </span>
+                                <a
+                                    href={featureUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Button
+                                        variant="outline"
+                                        className="flex items-center gap-2"
+                                    >
+                                        <Star className="w-4 h-4" />
+                                        Request a Feature
+                                    </Button>
+                                </a>
+                            </CardContent>
+                        </Card>
+                    </TabsContent>
+                    
                 </Tabs>
             </div>
-        </div>
+        
     );
 };
 

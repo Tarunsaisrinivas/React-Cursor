@@ -11,9 +11,11 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MousePointer2 } from "lucide-react";
+import { Heart, MousePointer2, Github, Bug, Star } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
-// --- code snippets ---
 const magnifierUsageCode = `import LensMagnifier from "@/components/LensMagnifier";
 
 export default function Demo() {
@@ -23,6 +25,7 @@ export default function Demo() {
     </div>
   );
 }`;
+
 const magnifierComponentCode = `"use client";
 import React, { useRef, useState } from "react";
 
@@ -67,7 +70,7 @@ const LensMagnifier = ({ src, zoom = 2, lensSize = 150 }) => {
     >
       <img
         ref={imgRef}
-        src={src}
+        src={src || "/placeholder.svg"}
         alt="Zoomable"
         className="w-full h-auto object-cover select-none pointer-events-none"
       />
@@ -92,39 +95,87 @@ const LensMagnifier = ({ src, zoom = 2, lensSize = 150 }) => {
 export default LensMagnifier;`;
 
 const propsTable = `
-Prop	 |  Type	| Default
-------------------------------
-src	     |  string	|   –	    
-zoom	 |  number	|   2	    
-lensSize |	number	|  150
+Prop       | Type    | Default
+-----------|---------|--------
+src        | string  | –
+zoom       | number  | 2
+lensSize   | number  | 150
 `;
 
 export default function LensMagnifierPage() {
+    const [selectedTab, setSelectedTab] = useState("demo");
+    const pathname = usePathname();
+    const encodedPath = encodeURIComponent(`[${pathname}]`);
+    const issueUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?q=label%3A%22Bug%20%F0%9F%90%9B%22&title=[Bug 🪲]${encodedPath}: `;
+    const featureUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?q=label%3A%22Feature%20%F0%9F%92%A1%22&title=[Feature 💡]${encodedPath}: `;
     return (
-        <div className="min-h-screen w-full flex items-center justify-center mx-auto dark:bg-[#171717] p-4">
+        <div className="w-full flex items-center justify-center mx-auto dark:bg-[#171717] p-4">
             <div className="w-full max-w-7xl mx-auto">
-                <div className="text-center mb-12">
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <MousePointer2 className="w-12 h-12 text-purple-500" />
-                        <h1 className="text-3xl md:text-5xl font-bold text-purple-500 ">
-                            Lens Magnifier Cursor
-                        </h1>
-                        <Badge variant="secondary" className="text-sm">
-                            Interactive
-                        </Badge>
+                {/* Header Section */}
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12 gap-6">
+                    {/* Left: Title and Description */}
+                    <div className="text-center lg:text-left space-y-4">
+                        <div className="flex items-center justify-center lg:justify-start gap-3">
+                            <MousePointer2 className="w-10 h-10 text-purple-500" />
+                            <h1 className="text-3xl md:text-5xl font-bold text-purple-500">
+                                Lens Magnifier Cursor
+                            </h1>
+                            <Badge variant="secondary" className="text-sm">
+                                Interactive
+                            </Badge>
+                        </div>
+                        <p className="text-muted-foreground text-xl max-w-2xl">
+                            Hover on the image to magnify that part using a lens
+                            effect.
+                        </p>
                     </div>
-                    <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
-                        Hover on the image to magnify that part using a lens
-                        effect.
-                    </p>
+
+                    {/* Right: Contribute Section */}
+                    <div className="flex flex-col items-center lg:items-end gap-4">
+                        <Button
+                            variant="outline"
+                            className={`backdrop-blur-md border border-purple-400/40 hover:bg-purple-500 hover:text-purple-400 shadow-lg flex items-center gap-2 ${
+                                selectedTab === "contribute"
+                                    ? "bg-white/30 backdrop-blur-3xl text-purple-500"
+                                    : "text-purple-300"
+                            }`}
+                            onClick={() => setSelectedTab("contribute")}
+                        >
+                            <Heart
+                                className={`w-4 h-4 ${
+                                    selectedTab === "contribute"
+                                        ? "fill-purple-500"
+                                        : ""
+                                }`}
+                            />
+                            Contribute
+                        </Button>
+                        {/* <div className="text-center lg:text-right text-sm text-muted-foreground">
+                            <div className="flex items-center gap-4">
+                                <span className="flex items-center gap-1">
+                                    <Star className="w-3 h-3 text-yellow-400" />
+                                    1.2k stars
+                                </span>
+                                <span className="flex items-center gap-1">
+                                    <Github className="w-3 h-3 text-gray-400" />
+                                    Open source
+                                </span>
+                            </div>
+                        </div> */}
+                    </div>
                 </div>
 
-                <Tabs defaultValue="demo" className="w-full">
+                <Tabs
+                    value={selectedTab}
+                    onValueChange={setSelectedTab}
+                    className="w-full"
+                >
                     <TabsList className="grid w-full grid-cols-4 mb-8">
                         <TabsTrigger value="demo">Live Demo</TabsTrigger>
                         <TabsTrigger value="component">Component</TabsTrigger>
                         <TabsTrigger value="usage">Usage</TabsTrigger>
                         <TabsTrigger value="props">Props</TabsTrigger>
+                        {/* <TabsTrigger value="contribute">Contribute</TabsTrigger> */}
                     </TabsList>
 
                     <TabsContent value="demo">
@@ -194,41 +245,50 @@ export default function LensMagnifierPage() {
                                 <CodeSnippetViewer
                                     code={propsTable}
                                     title="LensMagnifier Props"
-                                    language="typescript"
+                                    language="markdown"
                                     maxLines={8}
                                 />
-                                <div className="mt-6 space-y-4">
-                                    <div className="grid gap-4 md:grid-cols-2">
-                                        <div className="border rounded-xl p-4 bg-[#171717] border-purple-400 shadow-md">
-                                            <h4 className="font-semibold mb-2 text-purple-400">
-                                                src
-                                            </h4>
-                                            <p className="text-sm text-muted-foreground">
-                                                Image source URL/path to apply
-                                                the lens magnifier effect.
-                                            </p>
-                                        </div>
-                                        <div className="border rounded-xl p-4 bg-[#171717] border-purple-400 shadow-md">
-                                            <h4 className="font-semibold mb-2 text-purple-400">
-                                                zoom
-                                            </h4>
-                                            <p className="text-sm text-muted-foreground">
-                                                Zoom level multiplier. For
-                                                example, 2 = 200% zoom. Default:
-                                                2.
-                                            </p>
-                                        </div>
-                                        <div className="border rounded-xl p-4 bg-[#171717] border-purple-400 shadow-md">
-                                            <h4 className="font-semibold mb-2 text-purple-400">
-                                                lensSize
-                                            </h4>
-                                            <p className="text-sm text-muted-foreground">
-                                                Diameter of the magnifying lens
-                                                in pixels. Default: 150.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                            </CardContent>
+                        </Card>
+                    </TabsContent>
+
+                    <TabsContent value="contribute">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle className="text-center">
+                                    Help improve this component!
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a
+                                    href={issueUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Button
+                                        variant="outline"
+                                        className="flex items-center gap-2"
+                                    >
+                                        <Bug className="w-4 h-4" />
+                                        Report an Issue
+                                    </Button>
+                                </a>
+                                <span className="text-muted-foreground text-sm md:flex m:items-center items-center text-center">
+                                    or
+                                </span>
+                                <a
+                                    href={featureUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Button
+                                        variant="outline"
+                                        className="flex items-center gap-2"
+                                    >
+                                        <Star className="w-4 h-4" />
+                                        Request a Feature
+                                    </Button>
+                                </a>
                             </CardContent>
                         </Card>
                     </TabsContent>

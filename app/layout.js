@@ -1,5 +1,7 @@
 // app/layout.jsx
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Head from "next/head";
@@ -138,6 +140,7 @@ export default function RootLayout({ children }) {
                     disableTransitionOnChange
                 >
                     {children}
+                    <Analytics />
                 </ThemeProvider>
             </body>
         </html>

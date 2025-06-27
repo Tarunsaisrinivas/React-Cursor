@@ -43,11 +43,11 @@ export default function LandingPage() {
               <h1 className="text-6xl md:text-8xl font-bold leading-tight">
                 Create Magical
                 <br />
-                <span className="text-gray-400">Canvas Cursors</span>
+                <span className="text-gray-400">React Cursors</span>
               </h1>
 
               <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                Create bespoke cursor trails in React effortlessly—Canvas Cursor
+                Create bespoke cursor trails in React effortlessly — React Cursor
                 delivers high performance and deep customization.
               </p>
 
@@ -73,7 +73,7 @@ export default function LandingPage() {
                   </div>
                   <div className="flex-1 text-center">
                     <div className="bg-white/20  backdrop-blur-lg rounded-md px-4 py-1 text-sm text-white inline-block shadow-md">
-                      cursory.vercel.app
+                      reactcursor.tech
                     </div>
                   </div>
                 </div>

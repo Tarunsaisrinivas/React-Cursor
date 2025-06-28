@@ -34,7 +34,11 @@ A modern collection of customizable and animated cursor packs built with Next.js
 </p>
 
 ## Contributor
-  <img src="https://avatars.githubusercontent.com/u/92567478?v=4" width="80px" alt="Tarun Sai Srinivas" style="border-radius:50%" />
+<a href="https://github.com/tarunsaisrinivas">
+  <img src="https://github.com/tarunsaisrinivas.png" width="80" alt="Tarun Sai Srinivas" />
+  <br />
+  <sub><b>Tarun Sai Srinivas</b></sub>
+</a>
   
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://tarunsaisrinivas.site/)

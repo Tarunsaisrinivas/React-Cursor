@@ -33,3 +33,10 @@ A modern collection of customizable and animated cursor packs built with Next.js
 <img src="https://reactcursor.tech/shadcn.svg" width="40" height="40" />
 </p>
 
+## Contributor
+  <img src="https://avatars.githubusercontent.com/u/65526682?v=4" width="80px" alt="Tarun Sai Srinivas" />
+  
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://tarunsaisrinivas.site/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarun-sai-srinivas)

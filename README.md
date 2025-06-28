@@ -27,10 +27,8 @@ A modern collection of customizable and animated cursor packs built with Next.js
 
 ## Tech Stack
 
-
-![Nextjs](https://www.reactcursor.tech/nextjs.svg?style=flat-circle?width:100,height:100)
-![Tailwind Css](https://www.reactcursor.tech/tailwind.svg)
-![Shadcn Ui](https://www.reactcursor.tech/shadcn.svg)
-
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" height="40" style="margin-right: 20px;" /> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width="40" height="40" style="margin-right: 20px;" /> 
+<img src="https://raw.githubusercontent.com/shadcn/ui/main/apps/www/public/icon.png" width="40" height="40" />
 
 

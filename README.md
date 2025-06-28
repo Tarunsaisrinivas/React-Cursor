@@ -35,9 +35,7 @@ A modern collection of customizable and animated cursor packs built with Next.js
 
 ## Contributor
 <a href="https://github.com/tarunsaisrinivas">
-  <img src="https://github.com/tarunsaisrinivas.png" width="80" alt="Tarun Sai Srinivas" />
-  <br />
-  <sub><b>Tarun Sai Srinivas</b></sub>
+  <img src="https://github.com/tarunsaisrinivas.png?style=circle" width="80" alt="Tarun Sai Srinivas" />
 </a>
   
 ## 🔗 Links

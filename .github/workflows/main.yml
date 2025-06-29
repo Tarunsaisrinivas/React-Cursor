@@ -27,6 +27,4 @@ jobs:
       - name: 🛠️ Build Project
         run: npm run build
 
-      - name: 🚀 Run (Replace this step)
-        run: npm run dev
-        # Example: run: npm run deploy
+     

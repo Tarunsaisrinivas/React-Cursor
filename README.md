@@ -5,14 +5,12 @@ A modern collection of customizable and animated cursor packs built with Next.js
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
 <div align="center">
-	
-	<br>
+
     <picture>
-      <source media="(prefers-color-scheme: light)" srcset="https://reactcursor.tech/logo-banner.png">
-      <source media="(prefers-color-scheme: dark)" srcset="https://reactcursor.tech/logo-banner-light.png">
-      <img src="https://reactcursor.tech/logo-banner.png" alt="react-bits logo" width="1000">
+      <source media="(prefers-color-scheme: light)" srcset="/logo-banner.png">
+      <source media="(prefers-color-scheme: dark)" srcset="/logo-banner-light.png">
+      <img src="/logo-banner.png" alt="react-bits logo" width="1000">
     </picture>
-	<br>
 </div>
 
 ## Preview

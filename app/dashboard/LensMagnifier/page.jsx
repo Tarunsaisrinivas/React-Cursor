@@ -190,11 +190,20 @@ export default function LensMagnifierPage() {
                             </CardHeader>
                             <CardContent className="flex items-center justify-center">
                                 <div className="w-[400px] h-auto">
-                                    <LensMagnifier
-                                        src="/city.jpg"
-                                        zoom={2.5}
-                                        lensSize={100}
-                                    />
+                                    <Card>
+                                        
+                                        <LensMagnifier
+                                            src="/city.jpg"
+                                            zoom={2.5}
+                                            lensSize={100}
+                                        />
+                                        <CardDescription className="text-sm text-muted-foreground mt-2">
+                                            Explore the cityscape up close —
+                                            hover over the image to zoom into
+                                            buildings, streets, and skyline
+                                            details.
+                                        </CardDescription>
+                                    </Card>
                                 </div>
                             </CardContent>
                         </Card>

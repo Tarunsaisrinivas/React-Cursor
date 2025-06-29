@@ -4,6 +4,10 @@
 A modern collection of customizable and animated cursor packs built with Next.js, Tailwind CSS, and shadcn/ui — designed for developers who want to enhance their UI with creative cursor styles.
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+<p align="center">
+  <img src="https://reactcursor.tech/logo-banner-light.png#gh-light-mode-only" width="300" alt="React Cursor Logo (Light)" />
+  <img src="https://reactcursor.tech/logo-banner.png#gh-dark-mode-only" width="300" alt="React Cursor Logo (Dark)" />
+</p>
 
 ## Preview
 

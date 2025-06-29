@@ -1,13 +1,19 @@
-
 # 🖱️React Cursor
 
 A modern collection of customizable and animated cursor packs built with Next.js, Tailwind CSS, and shadcn/ui — designed for developers who want to enhance their UI with creative cursor styles.
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
-<p align="center">
-  <img src="https://reactcursor.tech/logo-banner-light.png#gh-light-mode-only" width="300" alt="React Cursor Logo (Light)" />
-  <img src="https://reactcursor.tech/logo-banner.png#gh-dark-mode-only" width="300" alt="React Cursor Logo (Dark)" />
-</p>
+
+<div align="center">
+	
+	<br>
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="https://reactcursor.tech/logo-banner.png">
+      <source media="(prefers-color-scheme: dark)" srcset="https://reactcursor.tech/logo-banner-light.png">
+      <img src="https://reactcursor.tech/logo-banner.png" alt="react-bits logo" width="1000">
+    </picture>
+	<br>
+</div>
 
 ## Preview
 
@@ -29,8 +35,8 @@ A modern collection of customizable and animated cursor packs built with Next.js
 
 📦 Easy copy or download option per cursor
 
-
 ## Tech Stack
+
 <p style= "display:flex, flex-direction:"row">
 <img src="https://reactcursor.tech/nextjs.svg" width="40" height="40" style="margin-right: 20px;" /> 
 <img src="https://reactcursor.tech/tailwind.svg" width="40" height="40" style="margin-right: 20px;" /> 
@@ -38,6 +44,7 @@ A modern collection of customizable and animated cursor packs built with Next.js
 </p>
 
 ## Contributor
+
 <a href="https://github.com/tarunsaisrinivas">
         <img 
           src="https://github.com/tarunsaisrinivas.png" 

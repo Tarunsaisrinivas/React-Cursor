@@ -12,6 +12,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { Suspense } from "react";
+import Loading from "@/app/containers/Loading";
 
 const items = [
     { title: "Binary Cursor", url: "/dashboard/BinaryCursor" },
@@ -40,7 +42,7 @@ export function AppSidebar() {
                   const isActive = pathname === item.url;
 
                   return (
-                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton asChild>
                         <Link
                           href={item.url}
@@ -53,8 +55,10 @@ export function AppSidebar() {
                         >
                           <span >{item.title}</span>
                         </Link>
+                        
                       </SidebarMenuButton>
                     </SidebarMenuItem>
+                
                   );
                 })}
               </SidebarMenu>

@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# 🖱️React Cursor
 
-First, run the development server:
+A modern collection of customizable and animated cursor packs built with Next.js, Tailwind CSS, and shadcn/ui — designed for developers who want to enhance their UI with creative cursor styles.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Preview
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+![App Screenshot](https://www.reactcursor.tech/image.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 🚀 Features
 
-## Learn More
+🎯 15+ Custom Cursor Packs
 
-To learn more about Next.js, take a look at the following resources:
+⚡ Built with Next.js App Router
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🎨 Styled using Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🧩 UI components powered by shadcn/ui
 
-## Deploy on Vercel
+🌙 Dark Mode Compatible
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🧰 Plug-and-play usage for any React/Next.js project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📦 Easy copy or download option per cursor
+
+
+## Tech Stack
+<p style= "display:flex, flex-direction:"row">
+<img src="https://reactcursor.tech/nextjs.svg" width="40" height="40" style="margin-right: 20px;" /> 
+<img src="https://reactcursor.tech/tailwind.svg" width="40" height="40" style="margin-right: 20px;" /> 
+<img src="https://reactcursor.tech/shadcn.svg" width="40" height="40" />
+</p>
+
+## Contributor
+<a href="https://github.com/tarunsaisrinivas">
+        <img 
+          src="https://github.com/tarunsaisrinivas.png" 
+          width="80" 
+          alt="Tarun Sai Srinivas"
+          style="border-radius: 50%; display: block;"
+        />
+      </a>
+  
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://tarunsaisrinivas.site/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarun-sai-srinivas)

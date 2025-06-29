@@ -4,6 +4,8 @@
 A modern collection of customizable and animated cursor packs built with Next.js, Tailwind CSS, and shadcn/ui — designed for developers who want to enhance their UI with creative cursor styles.
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+![Logo](https://reactcursor.tech/logo-banner.png)
+
 
 ## Preview
 

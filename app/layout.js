@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Head from "next/head";
-
+import Script from "next/script";
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
@@ -28,14 +28,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <Head>
-                <script
+            <head>
+                <Script
                     async
                     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4177154308183684"
-                    crossorigin="anonymous"
-                ></script>
+                    strategy="afterInteractive"
+                    crossOrigin="anonymous"
+                />
+
                 {/* ✅ PWA Meta & Icons */}
                 <meta name="application-name" content="React Cursor" />
+                <meta
+                    name="google-adsense-account"
+                    content="ca-pub-4177154308183684"
+                />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta
                     name="apple-mobile-web-app-status-bar-style"
@@ -132,7 +138,7 @@ export default function RootLayout({ children }) {
                     name="viewport"
                     content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
                 />
-            </Head>
+            </head>
 
             <body
                 suppressHydrationWarning

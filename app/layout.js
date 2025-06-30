@@ -29,6 +29,11 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" suppressHydrationWarning>
             <Head>
+                <script
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4177154308183684"
+                    crossorigin="anonymous"
+                ></script>
                 {/* ✅ PWA Meta & Icons */}
                 <meta name="application-name" content="React Cursor" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />

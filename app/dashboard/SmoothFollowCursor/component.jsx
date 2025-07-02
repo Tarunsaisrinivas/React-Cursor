@@ -3,18 +3,19 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 export default function SmoothFollowCursor({
-    color = "#00ffcc", // Default cyan color
-    dotColor = "#ffffff", // Default white for dot
-    borderColor = "#ffffff", // Default white for border
-    dotSize = 8, // Default 8px dot
-    borderSize = 28, // Default 28px border
-    hoverBorderSize = 44, // Default 44px when hovering
-    dotSpeed = 0.3, // Default dot follow speed
-    borderSpeed = 0.1, // Default border follow speed
-    opacity = 0.9, // Default opacity
-    borderOpacity = 0.7, // Default border opacity
-    dotOpacity = 1, // Default dot opacity
-    borderWidth = 1, // Default border width
+    dotColor = "violet", 
+    borderColor = "rgba(156, 39, 176, 0.5)", 
+    dotSize = 8, 
+    borderSize = 28, 
+    hoverBorderSize = 44, 
+    dotSpeed = 0.3, 
+    borderSpeed = 0.1, 
+    opacity = 0.9, 
+    borderOpacity = 0.7, 
+    dotOpacity = 1, 
+    borderWidth = 3, 
+
+    
 }) {
     const mousePosition = useRef({ x: 0, y: 0 });
     const dotPosition = useRef({ x: 0, y: 0 });
@@ -36,7 +37,7 @@ export default function SmoothFollowCursor({
     const animate = useCallback(() => {
         if (!rafActive.current) return;
 
-        // Update dot position
+      
         dotPosition.current.x = lerp(
             dotPosition.current.x,
             mousePosition.current.x,
@@ -48,7 +49,7 @@ export default function SmoothFollowCursor({
             dotSpeed
         );
 
-        // Update border position (follows the dot)
+       
         borderDotPosition.current.x = lerp(
             borderDotPosition.current.x,
             dotPosition.current.x,
@@ -137,7 +138,6 @@ export default function SmoothFollowCursor({
 
     return (
         <div className="pointer-events-none fixed inset-0 z-[9999]">
-            {/* Inner dot */}
             <div
                 className="absolute rounded-full"
                 style={{
@@ -153,7 +153,6 @@ export default function SmoothFollowCursor({
                 }}
             />
 
-            {/* Outer circle */}
             <div
                 className="absolute rounded-full"
                 style={{

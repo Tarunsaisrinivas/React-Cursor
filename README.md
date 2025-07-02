@@ -40,13 +40,8 @@ A modern collection of customizable and animated cursor packs built with Next.js
 
 ## Contributor
 
-<a href="https://github.com/tarunsaisrinivas">
-        <img 
-          src="https://github.com/tarunsaisrinivas.png" 
-          width="80" 
-          alt="Tarun Sai Srinivas"
-          style="border-radius: 50%; display: block;"
-        />
+<a href="https://github.com/tarunsaisrinivas/react-cursor/graphs/contributors">
+     <img src="https://contrib.rocks/image?repo=tarunsaisrinivas/react-cursor" />
       </a>
   
 ## 🔗 Links

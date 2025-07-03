@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: 📚 Documentation
+    url: https://github.com/tarunsaisrinivas/react-cursor/wiki
+    about: View usage examples and component documentation.
+
+  - name: 💬 Ask a Question
+    url: https://github.com/tarunsaisrinivas/react-cursor/discussions
+    about: Not a bug or feature request? Start a discussion instead.
+
+  - name: 🚨 Security Vulnerability
+    url: https://github.com/tarunsaisrinivas/react-cursor/security/policy
+    about: Found a potential security issue? Report it privately.

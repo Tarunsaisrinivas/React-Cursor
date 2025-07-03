@@ -18,9 +18,9 @@ import { Heart } from "lucide-react";
 const page = () => {
     const [selectedTab, setSelectedTab] = useState("demo");
     const pathname = usePathname();
-    const encodedPath = encodeURIComponent(`[${pathname}]`);
-    const issueUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?q=label%3A%22Bug%20%F0%9F%90%9B%22&title=[Bug 🪲]${encodedPath}: `;
-    const featureUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?q=label%3A%22Feature%20%F0%9F%92%A1%22&title=[Feature 💡]${encodedPath}: `;
+    const encodedPath = encodeURIComponent(`${pathname}`);
+    const issueUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?template=bug_report.md&title=[Bug 🪲]: ${encodedPath}&labels=bug:`;
+    const featureUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?template=feature_request.md&title=[Feature💡]:${encodedPath}: `;
 
     const SmoothCursorCode = `"use client";
     
@@ -235,10 +235,8 @@ const page = () => {
 | borderSpeed     | number | 0.1           |
 | opacity         | number | 0.9           |                          
 | borderOpacity   | number | 0.7           |                                           
-| dotOpacity      | number | 1             |                                              |
-| borderWidth     | number | 1             |                               
-
-    `;
+| dotOpacity      | number | 1             |                                              
+| borderWidth     | number | 1             |`;
     return (
         <div className="w-full flex flex-col items-center justify-center dark:bg-[#171717] p-4">
             <SmoothFollowCursor />

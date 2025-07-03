@@ -149,6 +149,7 @@ export default function LandingPage() {
                                               </span>
                                           </div>
                                       </div>
+                                      
 
                                       <div className="text-left">
                                           <div className="text-sm text-gray-400 mb-2">

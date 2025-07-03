@@ -61,7 +61,7 @@ export function AppSidebar() {
                                             >
                                                 <span>{item.title}</span>
                                                 {item.isNew && (
-                                                    <span className="ml-2 px-2 py-0.5 text-xs font-bold text-black/80 bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 rounded-full animate-shimmer">
+                                                    <span className="ml-2 px-2 py-0.5 text-xs font-bold text-purple-200 bg-purple-400/10 border border-purple-300/30 rounded-full backdrop-blur-md shadow-inner shadow-purple-500/20">
                                                         New
                                                     </span>
                                                 )}

@@ -132,3 +132,22 @@
   from { transform: translateX(-20px); }
   to { transform: translateX(0); }
 }
+.smoke-puff {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(circle, rgba(255,255,255,0.5), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: smoke 1s ease-out forwards;
+    opacity: 0.5;
+  }
+  
+  @keyframes smoke {
+    to {
+      transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(2);
+      opacity: 0;
+    }
+  }
+  

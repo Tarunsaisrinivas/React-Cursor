@@ -18,8 +18,8 @@ import { Heart } from "lucide-react";
 const page = () => {
     const [selectedTab, setSelectedTab] = useState("demo");
     const pathname = usePathname();
-    const encodedPath = encodeURIComponent(`${pathname}`);
-    const issueUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?template=bug_report.md&title=[Bug 🪲]: ${encodedPath}&labels=bug:`;
+    const encodedPath = encodeURIComponent(`[${pathname}]`);
+    const issueUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?template=bug_report.md&title=[Bug 🪲]: ${encodedPath}:`;
     const featureUrl = `https://github.com/Tarunsaisrinivas/React-Cursor/issues/new?template=feature_request.md&title=[Feature💡]:${encodedPath}: `;
 
     const SmoothCursorCode = `"use client";
@@ -234,7 +234,7 @@ const page = () => {
 | dotSpeed        | number | 0.3           |
 | borderSpeed     | number | 0.1           |
 | opacity         | number | 0.9           |                          
-| borderOpacity   | number | 0.7           |                                           
+| borderOpacity   | number | 0.7           |                                          
 | dotOpacity      | number | 1             |                                              
 | borderWidth     | number | 1             |`;
     return (

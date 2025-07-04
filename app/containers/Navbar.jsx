@@ -115,7 +115,7 @@ export default function Navbar() {
 
             {/* GitHub icon */}
             <a
-              href="#"
+              href="https://github.com/Tarunsaisrinivas/React-Cursor"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full backdrop-blur-md hover:bg-gray-200/40 dark:hover:bg-white/10 transition"

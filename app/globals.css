@@ -134,20 +134,37 @@
 }
 .smoke-puff {
     position: absolute;
-    width: 16px;
-    height: 16px;
-    background: radial-gradient(circle, rgba(255,255,255,0.5), transparent);
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(128, 128, 128, 0.05) 80%, transparent 100%);
     border-radius: 50%;
     pointer-events: none;
-    transform: translate(-50%, -50%);
-    animation: smoke 1s ease-out forwards;
-    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.6;
+    filter: blur(2px) brightness(1.9);
+    animation: smoke 1.2s ease-out forwards;
+    will-change: transform, opacity, filter;
   }
-  
+    
   @keyframes smoke {
     to {
-      transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(2);
+      transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(2.5) rotate(90deg);
       opacity: 0;
+      filter: blur(6px) brightness(0.8);
     }
   }
   
+
+  
+  
+   /* .fluid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent;
+    z-index: 10;
+  } */
+   

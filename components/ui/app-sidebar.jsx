@@ -25,8 +25,12 @@ const items = [
         url: "/dashboard/LensMagnifier",
     },
 
-      { title: "Smooth Follow Cursor", url: "/dashboard/SmoothFollowCursor",isNew: true },
-    //   { title: "Magnetic Cursor", url: "/dashboard/MagneticCursor" },
+    {
+        title: "Smooth Follow Cursor",
+        url: "/dashboard/SmoothFollowCursor",
+        isNew: true,
+    },
+      { title: "Fluid Simulation Cursor", url: "/dashboard/FluidSimulation" ,isNew: true},
     //   { title: "Magnetic Cursor", url: "/magnetic" },
     //   { title: "Bubble Cursor", url: "/bubble" },
 ];

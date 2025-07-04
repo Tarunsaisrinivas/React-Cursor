@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Heart, Star } from "lucide-react";
-import AimCursor from "./dashboard/AimCursor/component";
+import AimCursor from "./elements/AimCursor";
 import Navbar from "./containers/Navbar";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -26,19 +26,15 @@ export default function LandingPage() {
       <>
           <Navbar />
           <div className="min-h-screen bg-black text-white relative overflow-hidden">
-              {/* Grid Pattern Background */}
               <div
                   className="absolute inset-0 opacity-[0.02]"
                   style={{
-                      // backgroundImage: `url("data:image/svg+xml,%3csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fillRule='evenodd'%3e%3cg fill='%23ffffff' fillOpacity='1'%3e%3ccircle cx='30' cy='30' r='1.5'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e")`,
                       backgroundImage: `url("/grid.svg")`,
                   }}
               />
 
               <div className="relative z-10">
-                  {/* Header */}
-
-                  {/* Hero Section */}
+                 
                   <main className="max-w-7xl mx-auto px-6 pt-20 pb-12">
                       <div className="text-center space-y-8 mb-16">
                           <h1 className="text-6xl md:text-8xl font-bold leading-tight">
@@ -57,7 +53,7 @@ export default function LandingPage() {
 
                           <Button
                               onClick={() =>
-                                  handleNavigation("/dashboard/BinaryCursor")
+                                  handleNavigation("/CursorAnimation/BinaryCursor")
                               }
                               size="lg"
                               className="bg-white text-black hover:bg-gray-100 px-8 py-6 text-lg font-medium rounded-lg group"
@@ -67,7 +63,7 @@ export default function LandingPage() {
                           </Button>
                       </div>
 
-                      {/* Canvas Cursor Demo */}
+                     
                       <div className="max-w-5xl md:w-2/3 mx-auto ">
                           <div className=" bg-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 overflow-hidden">
                               {/* Browser Chrome */}
@@ -265,7 +261,6 @@ export default function LandingPage() {
                       </div>
                   </section>
 
-                  {/* Footer */}
                   <div className="pb-12">
                       <Footer />
                   </div>

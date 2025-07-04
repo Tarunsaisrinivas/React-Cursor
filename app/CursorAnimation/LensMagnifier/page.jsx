@@ -1,6 +1,6 @@
 "use client";
 
-import LensMagnifier from "./component";
+import LensMagnifier from "../../elements/LensMagnifier";
 import CodeSnippetViewer from "@/components/ui/code-snippet-viewer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {

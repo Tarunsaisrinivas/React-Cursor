@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import SmoothFollowCursor from "./component";
+import SmoothFollowCursor from "../../elements/SmoothFollowCursor";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
     Card,

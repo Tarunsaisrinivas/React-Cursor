@@ -1,5 +1,5 @@
 import React from "react";
-import MagneticCursor from "./component";
+import MagneticCursor from "../../elements/MagneticCursor";
 
 const page = () => {
   return <div>

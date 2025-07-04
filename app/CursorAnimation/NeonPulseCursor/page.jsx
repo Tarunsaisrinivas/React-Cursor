@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import NeonPulseCursor from "./component";
+import NeonPulseCursor from "../../elements/NeonPulseCursor";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
     Card,

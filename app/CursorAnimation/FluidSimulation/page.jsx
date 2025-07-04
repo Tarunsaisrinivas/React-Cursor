@@ -14,7 +14,7 @@ import CodeSnippetViewer from "@/components/ui/code-snippet-viewer";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { Heart } from "lucide-react";
-import FluidSimulation from "./component";
+import FluidSimulation from "../../elements/FluidSimulation";
 const page = () => {
     const [selectedTab, setSelectedTab] = useState("demo");
     const demoContainerRef = useRef(null);

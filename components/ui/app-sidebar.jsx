@@ -16,21 +16,21 @@ import { Suspense } from "react";
 import Loading from "@/app/containers/Loading";
 
 const items = [
-    { title: "Binary Cursor", url: "/dashboard/BinaryCursor" },
-    { title: "Canvas Cursor", url: "/dashboard/CanvasCursor" },
-    { title: "Aim Cursor", url: "/dashboard/AimCursor" },
-    { title: "Neon Pulse Cursor", url: "/dashboard/NeonPulseCursor" },
+    { title: "Binary Cursor", url: "/CursorAnimation/BinaryCursor" },
+    { title: "Canvas Cursor", url: "/CursorAnimation/CanvasCursor" },
+    { title: "Aim Cursor", url: "/CursorAnimation/AimCursor" },
+    { title: "Neon Pulse Cursor", url: "/CursorAnimation/NeonPulseCursor" },
     {
         title: "Lens Magnifier Cursor",
-        url: "/dashboard/LensMagnifier",
+        url: "/CursorAnimation/LensMagnifier",
     },
 
     {
         title: "Smooth Follow Cursor",
-        url: "/dashboard/SmoothFollowCursor",
+        url: "/CursorAnimation/SmoothFollowCursor",
         isNew: true,
     },
-      { title: "Fluid Simulation Cursor", url: "/dashboard/FluidSimulation" ,isNew: true},
+      { title: "Fluid Simulation Cursor", url: "/CursorAnimation/FluidSimulation" ,isNew: true},
     //   { title: "Magnetic Cursor", url: "/magnetic" },
     //   { title: "Bubble Cursor", url: "/bubble" },
 ];

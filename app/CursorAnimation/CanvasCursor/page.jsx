@@ -1,7 +1,7 @@
 "use client";
 
 import CodeSnippetViewer from "@/components/ui/code-snippet-viewer";
-import CanvasCursorComponent from "./component";
+import CanvasCursorComponent from "../../elements/CanvasCursor";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,

@@ -25,6 +25,7 @@
     "cmdk": "^1.1.1",
     "framer-motion": "^12.23.0",
     "glslify": "^7.1.1",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.518.0",
     "maath": "^0.10.8",
     "motion": "^12.18.1",

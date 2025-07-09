@@ -11,12 +11,16 @@ import {
   Settings,
   User,
   Home,
+  TerminalIcon,
+  Mouse,
 } from "lucide-react";
 import { Command } from "cmdk";
 import Image from "next/image";
-import { ModeToggle } from "@/components/ui/ModeToggle";
+// import { ModeToggle } from "@/components/ui/ModeToggle";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 export default function Navbar() {
+  const router = useRouter();
   // const [darkMode, setDarkMode] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -53,17 +57,26 @@ export default function Navbar() {
     setIsSearchOpen(false);
     // Handle different commands here
     switch (value) {
-      case "home":
-        // Navigate to home
+      case "binary-cursor":
+        router.push("/CursorAnimation/BinaryCursor");
         break;
-      case "settings":
-        // Navigate to settings
+      case "canvas-cursor":
+        router.push("/CursorAnimation/CanvasCursor");
         break;
-      case "profile":
-        // Navigate to profile
+      case "aim-cursor":
+        router.push("/CursorAnimation/AimCursor");
         break;
-      case "docs":
-        // Navigate to docs
+      case "neon-pulse-cursor":
+        router.push("/CursorAnimation/NeonPulseCursor");
+        break;
+      case "lens-maginifier-cursor":
+        router.push("/CursorAnimation/LensMagnifier");
+        break;
+      case "smooth-follow-cursor":
+        router.push("/CursorAnimation/SmoothFollowCursor");
+        break;
+      case "fluid-simulation-cursor":
+        router.push("/CursorAnimation/SmoothFollowCursor");
         break;
       case "github":
         window.open(
@@ -180,29 +193,63 @@ export default function Navbar() {
 
                               <Command.Group heading="Navigation">
                                   <Command.Item
-                                      value="home"
+                                      value="binary-cursor"
                                       onSelect={handleCommand}
                                       className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                                   >
-                                      <Home className="w-4 h-4" />
-                                      <span>Go to Home</span>
+                                      <Mouse className="w-4 h-4" />
+                                          <span>Binary Cursor</span>
+                                      
                                   </Command.Item>
                                   <Command.Item
-                                      value="settings"
+                                      value="canvas-cursor"
                                       onSelect={handleCommand}
                                       className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                                   >
-                                      <Settings className="w-4 h-4" />
-                                      <span>Settings</span>
+                                      <Mouse className="w-4 h-4" />
+                                      <span>Canvas Cursor</span>
                                   </Command.Item>
                                   <Command.Item
-                                      value="profile"
+                                      value="aim-cursor"
                                       onSelect={handleCommand}
                                       className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                                   >
-                                      <User className="w-4 h-4" />
-                                      <span>Profile</span>
+                                      <Mouse className="w-4 h-4" />
+                                      <span>Aim Cursor</span>
                                   </Command.Item>
+                                  <Command.Item
+                                      value="neon-pulse-cursor"
+                                      onSelect={handleCommand}
+                                      className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
+                                  >
+                                      <Mouse className="w-4 h-4" />
+                                      <span>Neon Pulse Cursor</span>
+                                  </Command.Item>
+                                  <Command.Item
+                                      value="lens-maginifier-cursor"
+                                      onSelect={handleCommand}
+                                      className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
+                                  >
+                                      <Mouse className="w-4 h-4" />
+                                      <span>Lens Magnifier Cursor</span>
+                                  </Command.Item>
+                                  <Command.Item
+                                      value="smooth-follow-cursor"
+                                      onSelect={handleCommand}
+                                      className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
+                                  >
+                                      <Mouse className="w-4 h-4" />
+                                      <span>Smooth Follow Cursor</span>
+                                  </Command.Item>
+                                  <Command.Item
+                                      value="fluid-simulation-cursor"
+                                      onSelect={handleCommand}
+                                      className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
+                                  >
+                                      <Mouse className="w-4 h-4" />
+                                      <span>Fluid Simulation Cursor</span>
+                                  </Command.Item>
+                                 
                               </Command.Group>
 
                               <Command.Separator className="h-px bg-gray-200 dark:bg-gray-700 my-1" />
@@ -214,27 +261,32 @@ export default function Navbar() {
                                       className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                                   >
                                       <FileText className="w-4 h-4" />
-                                      <span>Documentation</span>
+                                      <span>Introduction</span>
                                   </Command.Item>
                                   <Command.Item
                                       value="github"
                                       onSelect={handleCommand}
                                       className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                                   >
-                                      <Github className="w-4 h-4" />
-                                      <span>View on GitHub</span>
+                                      <Link
+                                          className="flex items-center gap-2"
+                                          href="https://github.com/Tarunsaisrinivas/React-Cursor"
+                                      >
+                                          <Github className="w-4 h-4" />
+                                          <span>View on GitHub</span>
+                                      </Link>
                                   </Command.Item>
                               </Command.Group>
 
                               <Command.Separator className="h-px bg-gray-200 dark:bg-gray-700 my-1" />
 
-                              <Command.Group heading="Actions">
+                              {/* <Command.Group heading="Actions">
                                   <Command.Item
                                       value="toggle-theme"
                                       onSelect={handleCommand}
                                       className="flex items-center gap-2 px-3 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                                   ></Command.Item>
-                              </Command.Group>
+                              </Command.Group> */}
                           </Command.List>
                       </Command>
                   </div>

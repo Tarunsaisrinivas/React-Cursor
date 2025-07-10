@@ -65,44 +65,6 @@ export default function RootLayout({ children }) {
                 <meta name="msapplication-tap-highlight" content="no" />
                 <meta name="theme-color" content="#000000" />
 
-                <link
-                    rel="apple-touch-icon"
-                    href="/touch-icon-iphone.png"
-                />
-                <link
-                    rel="apple-touch-icon"
-                    sizes="152x152"
-                    href="/touch-icon-ipad.png"
-                />
-                <link
-                    rel="apple-touch-icon"
-                    sizes="180x180"
-                    href="/touch-icon-iphone-retina.png"
-                />
-                <link
-                    rel="apple-touch-icon"
-                    sizes="167x167"
-                    href="/touch-icon-ipad-retina.png"
-                />
-
-                <link
-                    rel="icon"
-                    type="image/png"
-                    sizes="32x32"
-                    href="/favicon-32x32.png"
-                />
-                <link
-                    rel="icon"
-                    type="image/png"
-                    sizes="16x16"
-                    href="/favicon-16x16.png"
-                />
-                <link rel="manifest" href="/manifest.json" />
-                <link
-                    rel="mask-icon"
-                    href="/safari-pinned-tab.svg"
-                    color="#5bbad5"
-                />
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <link
                     rel="stylesheet"
@@ -138,6 +100,20 @@ export default function RootLayout({ children }) {
                     name="viewport"
                     content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
                 />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    href="/favicon-96x96.png"
+                    sizes="96x96"
+                />
+                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    href="/apple-touch-icon.png"
+                />
+                <link rel="manifest" href="/site.webmanifest" />
             </head>
 
             <body

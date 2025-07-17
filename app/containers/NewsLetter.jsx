@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Check } from "lucide-react";
 
 export default function NewsLetter() {
+    
     return (
         <div className="min-h-full bg-black flex justify-center pb-20  ">
             <div className="w-full max-w-4xl bg-gray-900/50 rounded-2xl p-8 ">

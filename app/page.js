@@ -23,20 +23,23 @@ export default function LandingPage() {
         return <Loading />;
     }
 
-    return (
-        <>
-            <Navbar />
-            <div className="min-h-screen bg-black text-white relative overflow-hidden">
-                <div className="relative z-10">
-                    <main className="max-w-7xl mx-auto px-6 pt-20 pb-12">
-                        <div className="text-center space-y-8 mb-16">
-                            <h1 className="text-6xl md:text-8xl font-bold leading-tight">
-                                Create Magical
-                                <br />
-                                <span className="text-gray-400">
-                                    React Cursors
-                                </span>
-                            </h1>
+  return (
+      <>
+          <Navbar />
+          <div className="min-h-screen bg-black text-white relative overflow-hidden">
+              */}
+
+              <div className="relative z-10">
+                 
+                  <main className="max-w-7xl mx-auto px-6 pt-20 pb-12">
+                      <div className="text-center space-y-8 mb-16">
+                          <h1 className="text-6xl md:text-8xl font-bold leading-tight">
+                              Create Magical
+                              <br />
+                              <span className="text-gray-400">
+                                  React Cursors
+                              </span>
+                          </h1>
 
                             <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
                                 Create bespoke cursor trails in React

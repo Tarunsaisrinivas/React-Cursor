@@ -10,7 +10,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import Loading from "./containers/Loading";
 import { useState } from "react";
 import Footer from "./containers/Footer";
-// import NewsLetter from "./containers/NewsLetter";
+import NewsLetter from "./containers/NewsLetter";
 
 export default function LandingPage() {
     const [loading, setLoading] = useState(false);
@@ -358,7 +358,7 @@ export default function LandingPage() {
                             </div>
                         </div>
                     </section>
-                    {/* <NewsLetter /> */}
+                    <NewsLetter /> 
                     <div className="pb-12">
                         <Footer />
                     </div>

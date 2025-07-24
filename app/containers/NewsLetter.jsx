@@ -2,9 +2,34 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check } from "lucide-react";
+import { useState } from "react";
 
 export default function NewsLetter() {
-    
+    const [email, setEmail] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState("");
+
+    const handleSubscribe = async () => {
+        setLoading(true);
+        setSuccess("");
+        try {
+            const res = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+            const data = await res.json();
+            if (res.ok) {
+                setSuccess("Subscribed successfully! Check your email.");
+                setEmail("");
+            } else {
+                alert(data.error);
+            }
+        } catch (err) {
+            alert("Something went wrong");
+        }
+        setLoading(false);
+    };
     return (
         <div className="min-h-full bg-black flex justify-center pb-20  ">
             <div className="w-full max-w-4xl bg-gray-900/50 rounded-2xl p-8 ">
@@ -80,17 +105,16 @@ export default function NewsLetter() {
                             <Input
                                 id="email"
                                 type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
-                                className="h-14 bg-gray-800 border-gray-700 text-white placeholder:text-gray-400 text-lg focus:border-purple-500 focus:ring-purple-500"
                             />
                         </div>
 
-                        <Button
-                            className="w-full h-14 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-lg"
-                            size="lg"
-                        >
-                            Subscribe
+                        <Button onClick={handleSubscribe} className="hover:cursor-pointer" disabled={loading}>
+                            {loading ? "Subscribing..." : "Subscribe"}
                         </Button>
+                        {success && <p className="text-green-500">{success}</p>}
                     </div>
                 </div>
             </div>

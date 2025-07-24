@@ -358,7 +358,7 @@ export default function LandingPage() {
                             </div>
                         </div>
                     </section>
-                    <NewsLetter /> 
+                    {/* <NewsLetter />  */}
                     <div className="pb-12">
                         <Footer />
                     </div>

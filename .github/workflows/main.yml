@@ -24,18 +24,11 @@ jobs:
 
       - name: 📝 Create .env.local file
         run: |
-          echo "NEXT_PUBLIC_APP_URL=${{ vars.NEXT_PUBLIC_APP_URL }}" >> .env.local
-          echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" >> .env.local
-          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" >> .env.local
-          echo "NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY }}" >> .env.local
-          echo "NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }}" >> .env.local
-          echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}" >> .env.local
-          echo "GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}" >> .env.local
           echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> .env.local
           echo "EMAIL_USER=${{ secrets.EMAIL_USER }}" >> .env.local
           echo "EMAIL_PASS=${{ secrets.EMAIL_PASS }}" >> .env.local
           echo "EMAIL_FROM=${{ secrets.EMAIL_FROM }}" >> .env.local
-          
+
           cat .env.local
 
       - name: 🛠️ Build Project

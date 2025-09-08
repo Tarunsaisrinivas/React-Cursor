@@ -33,7 +33,10 @@ A modern collection of customizable and animated cursor packs built with Next.js
 ## Tech Stack
 
 <p style= "display:flex, flex-direction:"row">
+    <a href="https://nextjs.org/">
+        
 <img src="https://reactcursor.tech/nextjs.svg" width="40" height="40" style="margin-right: 20px;" /> 
+    </a>
 <img src="https://reactcursor.tech/tailwind.svg" width="40" height="40" style="margin-right: 20px;" /> 
 <img src="https://reactcursor.tech/shadcn.svg" width="40" height="40" />
 </p>

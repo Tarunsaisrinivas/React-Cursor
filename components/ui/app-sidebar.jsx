@@ -28,9 +28,16 @@ const items = [
     {
         title: "Smooth Follow Cursor",
         url: "/CursorAnimation/SmoothFollowCursor",
+    },
+    {
+        title: "Fluid Simulation Cursor",
+        url: "/CursorAnimation/FluidSimulation",
+    },
+    {
+        title: "IOS Pointer Cursor",
+        url: "/CursorAnimation/IOSCursor",
         isNew: true,
     },
-      { title: "Fluid Simulation Cursor", url: "/CursorAnimation/FluidSimulation" ,isNew: true},
     //   { title: "Magnetic Cursor", url: "/magnetic" },
     //   { title: "Bubble Cursor", url: "/bubble" },
 ];

@@ -42,6 +42,9 @@ const items = [
     //   { title: "Bubble Cursor", url: "/bubble" },
 ];
 
+const uiComponents = [
+    { title: "HoverReaveal", url: "/UIComponents/HoverReaveal" },
+]
 export function AppSidebar() {
     const pathname = usePathname();
 
@@ -64,10 +67,9 @@ export function AppSidebar() {
                                             <Link
                                                 href={item.url}
                                                 className={`flex items-center justify-between px-2 py-1 rounded-md transition-all duration-200
-                                                    ${
-                                                        isActive
-                                                            ? "border-l-4 border-purple-800 text-purple-400 bg-[#171717] backdrop-blur-sm"
-                                                            : "hover:border-l-4 hover:border-white hover:bg-white/20 hover:backdrop-blur-xl hover:text-white"
+                                                    ${isActive
+                                                        ? "border-l-4 border-purple-800 text-purple-400 bg-[#171717] backdrop-blur-sm"
+                                                        : "hover:border-l-4 hover:border-white hover:bg-white/20 hover:backdrop-blur-xl hover:text-white"
                                                     }`}
                                             >
                                                 <span>{item.title}</span>
@@ -84,6 +86,40 @@ export function AppSidebar() {
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
+                {/* <SidebarGroup>
+                    <SidebarGroupLabel className="text-lg text-purple-400">
+                        UI Components
+                    </SidebarGroupLabel>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            {uiComponents.map((item) => {
+                                const isActive = pathname === item.url;
+
+                                return (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton asChild>
+                                            <Link
+                                                href={item.url}
+                                                className={`flex items-center justify-between px-2 py-1 rounded-md transition-all duration-200
+                                                    ${isActive
+                                                        ? "border-l-4 border-purple-800 text-purple-400 bg-[#171717] backdrop-blur-sm"
+                                                        : "hover:border-l-4 hover:border-white hover:bg-white/20 hover:backdrop-blur-xl hover:text-white"
+                                                    }`}
+                                            >
+                                                <span>{item.title}</span>
+                                                {item.isNew && (
+                                                    <span className="ml-2 px-2 py-0.5 text-xs font-bold text-purple-200 bg-purple-400/10 border border-purple-300/30 rounded-full backdrop-blur-md shadow-inner shadow-purple-500/20">
+                                                        New
+                                                    </span>
+                                                )}
+                                            </Link>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                );
+                            })}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup> */}
             </SidebarContent>
         </Sidebar>
     );

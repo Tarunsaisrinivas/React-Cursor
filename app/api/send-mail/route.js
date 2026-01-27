@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
-import dbConnect from "@/lib/dbConnect";
-import Subscriber from "@/models/Subscriber";
+import dbConnect from "../../../lib/db";
+import Subscriber from "../../../lib/models/subscriber";
 
 export async function POST(req) {
     try {
@@ -18,7 +18,7 @@ export async function POST(req) {
         if (emails.length === 0) {
             return Response.json(
                 { error: "No subscribers found" },
-                { status: 404 }
+                { status: 404 },
             );
         }
 
